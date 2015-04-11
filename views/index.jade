@@ -1,0 +1,22 @@
+extends layout
+
+block content
+	.bar.bar-header.bar-assertive
+		h1(class="title") {{ view.title }}
+
+	ion-content(scroll="false" class="bg-gray-search has-header")
+
+		.row
+			.col
+				label(class="item item-input")
+					input(type="search" placeholder="Search" ng-change="search()" ng-model="view.result.search")
+
+				.list
+					label(class="item item-radio" ng-repeat="airline in view.result.airlines")
+						input(type="radio" name="group")
+						.item-content.bg-dark
+							{{ airline.name }}
+						i(class="radio-icon ion-checkmark light")
+
+			.col.col-10(style="text-align: center;")
+				button(class="button button-dark icon ion-search")

@@ -1,0 +1,1 @@
+var autocomplete_app = angular.module('autocompleteApp', ['ionic']);
