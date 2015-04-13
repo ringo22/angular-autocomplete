@@ -1,5 +1,5 @@
 # angular-autocomplete
-This is a example of autocomplete with angularjs ans ExpressJs
+This is a example of autocomplete with angularjs and ExpressJs
 
 ## Getting started
 
@@ -23,7 +23,7 @@ First of all, You need have basic knowledges of angularJS.
 * Run project
 
 <pre>
-	DEBUG=Angular-pagination-table ./bin/www
+	DEBUG=Angular-autocomplete ./bin/www
 </pre>
 
 * Open in the browser: http://localhost:3000
