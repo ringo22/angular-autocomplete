@@ -2,26 +2,24 @@ autocomplete_app.controller('autocompleteCtrl', ['$scope', 'autocompleteService'
 
 	$scope.view = {
         title: 'Ionic autocomplete',
-        result: {
-            "users": [],
-            "search": ''
-        },
+        users_filter: [],
+        search: '',
         users: []
     };
 
     $scope.search = function() {
     	autocompleteService
-        .searchUser($scope.view.result.search)
+        .searchUser($scope.view.search)
         .then(function(matches) {
-			$scope.view.result.users = matches;
+			$scope.view.users_filter = matches;
 		});
     };
 
     $scope.selected = function(user) {
         $scope.view.users.push(user);
 
-        $scope.view.result.users = [];
-        $scope.view.result.search = '';
+        $scope.view.users_filter = [];
+        $scope.view.search = '';
     };
 
 }]);
