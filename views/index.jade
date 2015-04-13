@@ -12,11 +12,21 @@ block content
 					input(type="search" placeholder="Search" ng-change="search()" ng-model="view.result.search")
 
 				.list
-					label(class="item item-radio" ng-repeat="airline in view.result.airlines")
-						input(type="radio" name="group")
+					label(class="item item-radio" ng-repeat="user in view.result.users")
+						input(type="radio" name="group" ng-click="selected(user)")
 						.item-content.bg-dark
-							{{ airline.name }}
+							{{ user.name }}
 						i(class="radio-icon ion-checkmark light")
 
 			.col.col-10(style="text-align: center;")
 				button(class="button button-dark icon ion-search")
+
+
+		.row(ng-show="view.users.length > 0")
+			.col
+				.list
+					.item.item-divider Users
+
+					a(class="item item-icon-left" ng-repeat="user in view.users")
+						i(class="icon ion-person")
+						{{ user.job }} - {{ user.name }}
